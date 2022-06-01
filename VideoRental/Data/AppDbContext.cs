@@ -40,6 +40,15 @@ namespace VideoRental.Data
                 new Actor { ActorId = 14, ActorName = "Morgan Freemen", Gender = "Male" },
                 new Actor { ActorId = 15, ActorName = "Tommy Lee Jones", Gender = "Male" }
                 );
+            modelBuilder.Entity<Country>().HasData
+                (
+                new Country { CountryId = 1, CountryName = "USA"},
+                new Country { CountryId = 2, CountryName = "Italy"},
+                new Country { CountryId = 3, CountryName = "France"},
+                new Country { CountryId = 4, CountryName = "UK"},
+                new Country { CountryId = 5, CountryName = "Spain"},
+                new Country { CountryId = 6, CountryName = "Denmark"}
+                );
 
         }
         public DbSet<DVD>DVDs { get; set; }
