@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace VideoRental.Models
 {
@@ -7,6 +8,6 @@ namespace VideoRental.Models
         public int CustomerId { get; set; } 
         public string CustomerName { get; set; }
         public int Age { get; set; }
-       
+        //public virtual ICollection<DVD> DVDs { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace VideoRental.Models
+﻿using System.Collections.Generic;
+
+namespace VideoRental.Models
 {
     public class Genre
     {
@@ -6,5 +8,6 @@
         public string GenreName { get; set; }
         public string Description { get; set; }
         public int AgeLimit { get; set; }
+        public virtual ICollection<GenreDvd> GenreDvds { get; set; }
     }
 }
