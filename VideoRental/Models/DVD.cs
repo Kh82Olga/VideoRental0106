@@ -6,7 +6,7 @@ namespace VideoRental.Models
     {
         public int DvdId { get; set; }
         public string MovieName { get; set; }
-        public DateTime Release { get; set; }
+        public string ReleaseYear { get; set; }
         public bool Available { get; set; }
     }
 }
