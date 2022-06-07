@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VideoRental.Data;
+using VideoRental.Repositories;
 
 namespace VideoRental
 {
@@ -26,6 +27,9 @@ namespace VideoRental
         {
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
+            services.AddTransient<ActorRepo, ActorRepo>();
+            services.AddTransient<DvdRepo, DvdRepo>();
+            services.AddTransient<ActorDvdRepo, ActorDvdRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +53,7 @@ namespace VideoRental
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Actor}/{action=Index}/{id?}");
             });
         }
     }

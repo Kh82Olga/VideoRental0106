@@ -16,6 +16,7 @@ namespace VideoRental.Repositories
         public void Delete(Actor actor)
         {
             _context.Actors.Remove(actor);
+            _context.SaveChanges();
         }
 
         public List<Actor> GetAll()
@@ -31,11 +32,13 @@ namespace VideoRental.Repositories
         public void Insert(Actor actor)
         {
             _context.Actors.Add(actor);
+            _context.SaveChanges();
         }
 
         public void Update(Actor actor)
         {
            _context.Actors.Update(actor);
+            _context.SaveChanges();
         }
     }
 }

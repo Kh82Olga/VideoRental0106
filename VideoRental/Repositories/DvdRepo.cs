@@ -16,6 +16,7 @@ namespace VideoRental.Repositories
         public void Delete(DVD dvd)
         {
             _context.DVDs.Remove(dvd);
+            _context.SaveChanges();
         }
 
         public List<DVD> GetAll()
@@ -31,11 +32,13 @@ namespace VideoRental.Repositories
         public void Insert(DVD dvd)
         {
             _context.DVDs.Add(dvd);
+            _context.SaveChanges();
         }
 
         public void Update(DVD dvd)
         {
             _context.DVDs.Update(dvd);
+            _context.SaveChanges();
         }
     }
 }
