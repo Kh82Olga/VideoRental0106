@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -17,11 +18,17 @@ namespace VideoRental.Controllers
         public HomeController(AppDbContext context)
         {
             _context = context;
+            
         }
 
         public IActionResult Index()
         {
-            return View();
+            var result = _context.DVDs
+            .Include(e => e.Country)
+            .Include(e => e.ActorDvds)
+            .Include(e => e.GenreDvds);
+
+            return View(result);
         }
 
         public IActionResult Privacy()

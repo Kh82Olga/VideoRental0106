@@ -48,15 +48,15 @@ namespace VideoRental.Data
                 new Country { CountryId = 2, CountryName = "Italy"},
                 new Country { CountryId = 3, CountryName = "France"},
                 new Country { CountryId = 4, CountryName = "UK"},
-                new Country { CountryId = 5, CountryName = "Spain"}               
+                new Country { CountryId = 5, CountryName = "Canada"}               
                 );
             modelBuilder.Entity<DVD>().HasData
                 (
-                new DVD { DvdId = 1, MovieName = "Men in Black", ReleaseYear = "1997", Available = true, CountryId = 1, Language = "English" },
-                new DVD { DvdId = 2, MovieName = "Forrest Gump", ReleaseYear = "1994", Available = true, CountryId = 1, Language = "English" },
-                new DVD { DvdId = 3, MovieName = "Harry Potter", ReleaseYear = "2001", Available = true, CountryId = 1, Language = "English" },
-                new DVD { DvdId = 4, MovieName = "Leon: The Proffesional", ReleaseYear = "1994", Available = true, CountryId = 3, Language = "French" },
-                new DVD { DvdId = 5, MovieName = "Django Unchained", ReleaseYear = "2012", Available = true, CountryId = 1, Language = "English" },
+                new DVD { DvdId = 1, MovieName = "Men in Black", ReleaseYear = "1997", Available = true, CountryId = 1},
+                new DVD { DvdId = 2, MovieName = "Forrest Gump", ReleaseYear = "1994", Available = true, CountryId = 1 },
+                new DVD { DvdId = 3, MovieName = "Harry Potter", ReleaseYear = "2001", Available = true, CountryId = 4},
+                new DVD { DvdId = 4, MovieName = "Leon: The Proffesional", ReleaseYear = "1994", Available = true, CountryId = 3},
+                new DVD { DvdId = 5, MovieName = "Django Unchained", ReleaseYear = "2012", Available = true, CountryId = 1},
                 new DVD { DvdId = 6, MovieName = "Avengers:Endgame", ReleaseYear = "2019", Available = true, CountryId = 1 },
                 new DVD { DvdId = 7, MovieName = "Full Metal Jacket", ReleaseYear = "1987", Available = true, CountryId = 1 },
                 new DVD { DvdId = 8, MovieName = "The Wolf of Wall Street", ReleaseYear = "2013", Available = true, CountryId = 1 },
@@ -68,24 +68,24 @@ namespace VideoRental.Data
                 new DVD { DvdId = 14, MovieName = "Groundhog Day", ReleaseYear = "1993", Available = true, CountryId = 1 },
                 new DVD { DvdId = 15, MovieName = "Pirates of the Carribean", ReleaseYear = "2003", Available = true, CountryId = 1 },
                 new DVD { DvdId = 16, MovieName = "Aladdin", ReleaseYear = "2019", Available = true, CountryId = 1 },
-                new DVD { DvdId = 17, MovieName = "Beauty and the Beast", ReleaseYear = "2017", Available = true, CountryId = 1 },
+                new DVD { DvdId = 17, MovieName = "Beauty and the Beast", ReleaseYear = "2017", Available = true, CountryId = 4 },
                 new DVD { DvdId = 18, MovieName = "Inception", ReleaseYear = "2010", Available = true, CountryId = 1 },
-                new DVD { DvdId = 19, MovieName = "The Lord of the Rings", ReleaseYear = "2002", Available = true, CountryId = 1 },
-                new DVD { DvdId = 20, MovieName = "Fantastic Beasts", ReleaseYear = "", Available = true, CountryId = 1 },
+                new DVD { DvdId = 19, MovieName = "The Lord of the Rings", ReleaseYear = "2002", Available = true, CountryId = 4 },
+                new DVD { DvdId = 20, MovieName = "Fantastic Beasts", ReleaseYear = "2019", Available = true, CountryId = 4 },
                 new DVD { DvdId = 21, MovieName = "Murder on the Orient Express", ReleaseYear = "2017", Available = true, CountryId = 1 },
-                new DVD { DvdId = 22, MovieName = "The Hobbit", ReleaseYear = "2013", Available = true, CountryId = 1 },
+                new DVD { DvdId = 22, MovieName = "The Hobbit", ReleaseYear = "2013", Available = true, CountryId = 4 },
                 new DVD { DvdId = 23, MovieName = "Alice through the Looking Glass", ReleaseYear = "2016", Available = true, CountryId = 1 },
                 new DVD { DvdId = 24, MovieName = "Evan Almighty", ReleaseYear = "2007", Available = true, CountryId = 1 },
                 new DVD { DvdId = 25, MovieName = "Deep Sea", ReleaseYear = "2006", Available = true, CountryId = 1 },
                 new DVD { DvdId = 26, MovieName = "I am Legend", ReleaseYear = "2007", Available = true, CountryId = 1 },
                 new DVD { DvdId = 27, MovieName = "I, Robot", ReleaseYear = "2004", Available = true, CountryId = 1 },
                 new DVD { DvdId = 28, MovieName = "Into The Woods", ReleaseYear = "2014", Available = true, CountryId = 1 },
-                new DVD { DvdId = 29, MovieName = "Sweeney Todd", ReleaseYear = "2002", Available = true, CountryId = 1 },
+                new DVD { DvdId = 29, MovieName = "Sweeney Todd", ReleaseYear = "2002", Available = true, CountryId = 4 },
                 new DVD { DvdId = 30, MovieName = "Finding Neverland", ReleaseYear = "2004", Available = true, CountryId = 1 },
-                new DVD { DvdId = 31, MovieName = "The Fifth Element", ReleaseYear = "1997", Available = true, CountryId = 3, Language = "French" },
+                new DVD { DvdId = 31, MovieName = "The Fifth Element", ReleaseYear = "1997", Available = true, CountryId = 3},
                 new DVD { DvdId = 32, MovieName = "Maleficent", ReleaseYear = "2014", Available = true, CountryId = 1 },
                 new DVD { DvdId = 33, MovieName = "Mr. and Mrs. Smith", ReleaseYear = "2005", Available = true, CountryId = 1 },
-                new DVD { DvdId = 34, MovieName = "Horns", ReleaseYear = "2013", Available = true, CountryId = 1 },
+                new DVD { DvdId = 34, MovieName = "Horns", ReleaseYear = "2013", Available = true, CountryId = 5 },
                 new DVD { DvdId = 35, MovieName = "SpongeBob Square Pants", ReleaseYear = "1999", Available = true, CountryId = 1 }
                 );
             modelBuilder.Entity<Customer>().HasData
