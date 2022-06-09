@@ -17,9 +17,14 @@ namespace VideoRental.Models
         public int CountryId { get; set; }
         [ForeignKey("CountryId")]
         public virtual Country Country { get; set; }
-        public virtual ICollection<ActorDvd> ActorDvds { get; set; }
-
-        public virtual ICollection<GenreDvd> GenreDvds { get; set; }
+        public int GenreId { get; set; }
+        [ForeignKey("GenreId")]
+        public virtual Genre Genre { get; set; }
+        public int ActorId { get; set; }
+        [ForeignKey("ActorId")]
+        public virtual Actor Actor { get; set; }
+        
+        
 
     }
 }
