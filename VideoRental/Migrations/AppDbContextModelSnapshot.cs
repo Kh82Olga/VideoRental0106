@@ -134,208 +134,6 @@ namespace VideoRental.Migrations
                         });
                 });
 
-            modelBuilder.Entity("VideoRental.Models.ActorDvd", b =>
-                {
-                    b.Property<int>("ActorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DvdId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ActorId", "DvdId");
-
-                    b.HasIndex("DvdId");
-
-                    b.ToTable("ActorDvds");
-
-                    b.HasData(
-                        new
-                        {
-                            ActorId = 1,
-                            DvdId = 15
-                        },
-                        new
-                        {
-                            ActorId = 1,
-                            DvdId = 20
-                        },
-                        new
-                        {
-                            ActorId = 1,
-                            DvdId = 21
-                        },
-                        new
-                        {
-                            ActorId = 1,
-                            DvdId = 23
-                        },
-                        new
-                        {
-                            ActorId = 1,
-                            DvdId = 25
-                        },
-                        new
-                        {
-                            ActorId = 1,
-                            DvdId = 28
-                        },
-                        new
-                        {
-                            ActorId = 1,
-                            DvdId = 29
-                        },
-                        new
-                        {
-                            ActorId = 1,
-                            DvdId = 30
-                        },
-                        new
-                        {
-                            ActorId = 2,
-                            DvdId = 2
-                        },
-                        new
-                        {
-                            ActorId = 2,
-                            DvdId = 11
-                        },
-                        new
-                        {
-                            ActorId = 3,
-                            DvdId = 3
-                        },
-                        new
-                        {
-                            ActorId = 3,
-                            DvdId = 17
-                        },
-                        new
-                        {
-                            ActorId = 4,
-                            DvdId = 32
-                        },
-                        new
-                        {
-                            ActorId = 4,
-                            DvdId = 33
-                        },
-                        new
-                        {
-                            ActorId = 5,
-                            DvdId = 3
-                        },
-                        new
-                        {
-                            ActorId = 5,
-                            DvdId = 34
-                        },
-                        new
-                        {
-                            ActorId = 6,
-                            DvdId = 28
-                        },
-                        new
-                        {
-                            ActorId = 7,
-                            DvdId = 1
-                        },
-                        new
-                        {
-                            ActorId = 7,
-                            DvdId = 16
-                        },
-                        new
-                        {
-                            ActorId = 7,
-                            DvdId = 26
-                        },
-                        new
-                        {
-                            ActorId = 7,
-                            DvdId = 27
-                        },
-                        new
-                        {
-                            ActorId = 8,
-                            DvdId = 4
-                        },
-                        new
-                        {
-                            ActorId = 9,
-                            DvdId = 25
-                        },
-                        new
-                        {
-                            ActorId = 9,
-                            DvdId = 30
-                        },
-                        new
-                        {
-                            ActorId = 10,
-                            DvdId = 3
-                        },
-                        new
-                        {
-                            ActorId = 10,
-                            DvdId = 23
-                        },
-                        new
-                        {
-                            ActorId = 10,
-                            DvdId = 29
-                        },
-                        new
-                        {
-                            ActorId = 11,
-                            DvdId = 6
-                        },
-                        new
-                        {
-                            ActorId = 12,
-                            DvdId = 5
-                        },
-                        new
-                        {
-                            ActorId = 12,
-                            DvdId = 8
-                        },
-                        new
-                        {
-                            ActorId = 12,
-                            DvdId = 11
-                        },
-                        new
-                        {
-                            ActorId = 12,
-                            DvdId = 18
-                        },
-                        new
-                        {
-                            ActorId = 13,
-                            DvdId = 33
-                        },
-                        new
-                        {
-                            ActorId = 14,
-                            DvdId = 24
-                        },
-                        new
-                        {
-                            ActorId = 15,
-                            DvdId = 1
-                        },
-                        new
-                        {
-                            ActorId = 16,
-                            DvdId = 3
-                        },
-                        new
-                        {
-                            ActorId = 16,
-                            DvdId = 29
-                        });
-                });
-
             modelBuilder.Entity("VideoRental.Models.Country", b =>
                 {
                     b.Property<int>("CountryId")
@@ -453,10 +251,16 @@ namespace VideoRental.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ActorId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("Available")
                         .HasColumnType("bit");
 
                     b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GenreKey")
                         .HasColumnType("int");
 
                     b.Property<string>("MovieName")
@@ -467,7 +271,11 @@ namespace VideoRental.Migrations
 
                     b.HasKey("DvdId");
 
+                    b.HasIndex("ActorId");
+
                     b.HasIndex("CountryId");
+
+                    b.HasIndex("GenreKey");
 
                     b.ToTable("DVDs");
 
@@ -475,280 +283,350 @@ namespace VideoRental.Migrations
                         new
                         {
                             DvdId = 1,
+                            ActorId = 7,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 1,
                             MovieName = "Men in Black",
                             ReleaseYear = "1997"
                         },
                         new
                         {
                             DvdId = 2,
+                            ActorId = 2,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 8,
                             MovieName = "Forrest Gump",
                             ReleaseYear = "1994"
                         },
                         new
                         {
                             DvdId = 3,
+                            ActorId = 3,
                             Available = true,
                             CountryId = 4,
+                            GenreKey = 4,
                             MovieName = "Harry Potter",
                             ReleaseYear = "2001"
                         },
                         new
                         {
                             DvdId = 4,
+                            ActorId = 8,
                             Available = true,
                             CountryId = 3,
+                            GenreKey = 3,
                             MovieName = "Leon: The Proffesional",
                             ReleaseYear = "1994"
                         },
                         new
                         {
                             DvdId = 5,
+                            ActorId = 12,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 7,
                             MovieName = "Django Unchained",
                             ReleaseYear = "2012"
                         },
                         new
                         {
                             DvdId = 6,
+                            ActorId = 11,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 1,
                             MovieName = "Avengers:Endgame",
                             ReleaseYear = "2019"
                         },
                         new
                         {
                             DvdId = 7,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 3,
                             MovieName = "Full Metal Jacket",
                             ReleaseYear = "1987"
                         },
                         new
                         {
                             DvdId = 8,
+                            ActorId = 12,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 2,
                             MovieName = "The Wolf of Wall Street",
                             ReleaseYear = "2013"
                         },
                         new
                         {
                             DvdId = 9,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 3,
                             MovieName = "Pan's Labyrinth",
                             ReleaseYear = "2006"
                         },
                         new
                         {
                             DvdId = 10,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 6,
                             MovieName = "The Sixth Sence",
                             ReleaseYear = "1999"
                         },
                         new
                         {
                             DvdId = 11,
+                            ActorId = 2,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 3,
                             MovieName = "Catch Me If You Can",
                             ReleaseYear = "2002"
                         },
                         new
                         {
                             DvdId = 12,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 2,
                             MovieName = "The Big Lebowski",
                             ReleaseYear = "1998"
                         },
                         new
                         {
                             DvdId = 13,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 10,
                             MovieName = "Monsters Inc.",
                             ReleaseYear = "2001"
                         },
                         new
                         {
                             DvdId = 14,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 2,
                             MovieName = "Groundhog Day",
                             ReleaseYear = "1993"
                         },
                         new
                         {
                             DvdId = 15,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 1,
                             MovieName = "Pirates of the Carribean",
                             ReleaseYear = "2003"
                         },
                         new
                         {
                             DvdId = 16,
+                            ActorId = 7,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 9,
                             MovieName = "Aladdin",
                             ReleaseYear = "2019"
                         },
                         new
                         {
                             DvdId = 17,
+                            ActorId = 3,
                             Available = true,
                             CountryId = 4,
+                            GenreKey = 9,
                             MovieName = "Beauty and the Beast",
                             ReleaseYear = "2017"
                         },
                         new
                         {
                             DvdId = 18,
+                            ActorId = 12,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 1,
                             MovieName = "Inception",
                             ReleaseYear = "2010"
                         },
                         new
                         {
                             DvdId = 19,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 4,
+                            GenreKey = 4,
                             MovieName = "The Lord of the Rings",
                             ReleaseYear = "2002"
                         },
                         new
                         {
                             DvdId = 20,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 4,
+                            GenreKey = 4,
                             MovieName = "Fantastic Beasts",
                             ReleaseYear = "2019"
                         },
                         new
                         {
                             DvdId = 21,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 9,
                             MovieName = "Murder on the Orient Express",
                             ReleaseYear = "2017"
                         },
                         new
                         {
                             DvdId = 22,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 4,
+                            GenreKey = 9,
                             MovieName = "The Hobbit",
                             ReleaseYear = "2013"
                         },
                         new
                         {
                             DvdId = 23,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 9,
                             MovieName = "Alice through the Looking Glass",
                             ReleaseYear = "2016"
                         },
                         new
                         {
                             DvdId = 24,
+                            ActorId = 14,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 9,
                             MovieName = "Evan Almighty",
                             ReleaseYear = "2007"
                         },
                         new
                         {
                             DvdId = 25,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 9,
                             MovieName = "Deep Sea",
                             ReleaseYear = "2006"
                         },
                         new
                         {
                             DvdId = 26,
+                            ActorId = 7,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 5,
                             MovieName = "I am Legend",
                             ReleaseYear = "2007"
                         },
                         new
                         {
                             DvdId = 27,
+                            ActorId = 7,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 1,
                             MovieName = "I, Robot",
                             ReleaseYear = "2004"
                         },
                         new
                         {
                             DvdId = 28,
+                            ActorId = 6,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 4,
                             MovieName = "Into The Woods",
                             ReleaseYear = "2014"
                         },
                         new
                         {
                             DvdId = 29,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 4,
+                            GenreKey = 5,
                             MovieName = "Sweeney Todd",
                             ReleaseYear = "2002"
                         },
                         new
                         {
                             DvdId = 30,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 9,
                             MovieName = "Finding Neverland",
                             ReleaseYear = "2004"
                         },
                         new
                         {
                             DvdId = 31,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 3,
+                            GenreKey = 9,
                             MovieName = "The Fifth Element",
                             ReleaseYear = "1997"
                         },
                         new
                         {
                             DvdId = 32,
+                            ActorId = 4,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 4,
                             MovieName = "Maleficent",
                             ReleaseYear = "2014"
                         },
                         new
                         {
                             DvdId = 33,
+                            ActorId = 4,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 1,
                             MovieName = "Mr. and Mrs. Smith",
                             ReleaseYear = "2005"
                         },
                         new
                         {
                             DvdId = 34,
+                            ActorId = 5,
                             Available = true,
                             CountryId = 5,
+                            GenreKey = 5,
                             MovieName = "Horns",
                             ReleaseYear = "2013"
                         },
                         new
                         {
                             DvdId = 35,
+                            ActorId = 1,
                             Available = true,
                             CountryId = 1,
+                            GenreKey = 10,
                             MovieName = "SpongeBob Square Pants",
                             ReleaseYear = "1999"
                         });
@@ -756,8 +634,9 @@ namespace VideoRental.Migrations
 
             modelBuilder.Entity("VideoRental.Models.Genre", b =>
                 {
-                    b.Property<int>("GenreId")
+                    b.Property<int>("GenreKey")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("Id")
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -770,355 +649,100 @@ namespace VideoRental.Migrations
                     b.Property<string>("GenreName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("GenreId");
+                    b.HasKey("GenreKey");
 
                     b.ToTable("Genres");
 
                     b.HasData(
                         new
                         {
-                            GenreId = 1,
+                            GenreKey = 1,
                             AgeLimit = 12,
                             Description = "Some material may not be suitable for children.",
                             GenreName = "Action"
                         },
                         new
                         {
-                            GenreId = 2,
+                            GenreKey = 2,
                             AgeLimit = 0,
                             Description = "All ages admitted.",
                             GenreName = "Comedy"
                         },
                         new
                         {
-                            GenreId = 3,
+                            GenreKey = 3,
                             AgeLimit = 12,
                             Description = "Some material may not be suitable for children.",
                             GenreName = "Drama"
                         },
                         new
                         {
-                            GenreId = 4,
+                            GenreKey = 4,
                             AgeLimit = 0,
                             Description = "All ages admitted.",
                             GenreName = "Fantasy"
                         },
                         new
                         {
-                            GenreId = 5,
+                            GenreKey = 5,
                             AgeLimit = 16,
                             Description = "Requires parent accompanying.",
                             GenreName = "Horror"
                         },
                         new
                         {
-                            GenreId = 6,
+                            GenreKey = 6,
                             AgeLimit = 12,
                             Description = "Some material may not be suitable for children.",
                             GenreName = "Thriller"
                         },
                         new
                         {
-                            GenreId = 7,
+                            GenreKey = 7,
                             AgeLimit = 0,
                             Description = "All ages admitted.",
                             GenreName = "Western"
                         },
                         new
                         {
-                            GenreId = 8,
+                            GenreKey = 8,
                             AgeLimit = 12,
                             Description = "Some material may not be suitable for children.",
                             GenreName = "Romantic"
                         },
                         new
                         {
-                            GenreId = 9,
+                            GenreKey = 9,
                             AgeLimit = 0,
                             Description = "All ages admitted.",
                             GenreName = "Family"
                         },
                         new
                         {
-                            GenreId = 10,
+                            GenreKey = 10,
                             AgeLimit = 0,
                             Description = "All ages admitted.",
                             GenreName = "Cartoon"
                         });
                 });
 
-            modelBuilder.Entity("VideoRental.Models.GenreDvd", b =>
-                {
-                    b.Property<int>("GenreId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DvdId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GenreId", "DvdId");
-
-                    b.HasIndex("DvdId");
-
-                    b.ToTable("GenreDvds");
-
-                    b.HasData(
-                        new
-                        {
-                            GenreId = 1,
-                            DvdId = 1
-                        },
-                        new
-                        {
-                            GenreId = 1,
-                            DvdId = 4
-                        },
-                        new
-                        {
-                            GenreId = 1,
-                            DvdId = 6
-                        },
-                        new
-                        {
-                            GenreId = 1,
-                            DvdId = 15
-                        },
-                        new
-                        {
-                            GenreId = 1,
-                            DvdId = 18
-                        },
-                        new
-                        {
-                            GenreId = 1,
-                            DvdId = 27
-                        },
-                        new
-                        {
-                            GenreId = 1,
-                            DvdId = 33
-                        },
-                        new
-                        {
-                            GenreId = 2,
-                            DvdId = 1
-                        },
-                        new
-                        {
-                            GenreId = 2,
-                            DvdId = 8
-                        },
-                        new
-                        {
-                            GenreId = 2,
-                            DvdId = 12
-                        },
-                        new
-                        {
-                            GenreId = 2,
-                            DvdId = 14
-                        },
-                        new
-                        {
-                            GenreId = 2,
-                            DvdId = 24
-                        },
-                        new
-                        {
-                            GenreId = 3,
-                            DvdId = 2
-                        },
-                        new
-                        {
-                            GenreId = 3,
-                            DvdId = 4
-                        },
-                        new
-                        {
-                            GenreId = 3,
-                            DvdId = 7
-                        },
-                        new
-                        {
-                            GenreId = 3,
-                            DvdId = 9
-                        },
-                        new
-                        {
-                            GenreId = 3,
-                            DvdId = 11
-                        },
-                        new
-                        {
-                            GenreId = 4,
-                            DvdId = 3
-                        },
-                        new
-                        {
-                            GenreId = 4,
-                            DvdId = 19
-                        },
-                        new
-                        {
-                            GenreId = 4,
-                            DvdId = 20
-                        },
-                        new
-                        {
-                            GenreId = 4,
-                            DvdId = 22
-                        },
-                        new
-                        {
-                            GenreId = 4,
-                            DvdId = 23
-                        },
-                        new
-                        {
-                            GenreId = 4,
-                            DvdId = 28
-                        },
-                        new
-                        {
-                            GenreId = 4,
-                            DvdId = 32
-                        },
-                        new
-                        {
-                            GenreId = 5,
-                            DvdId = 26
-                        },
-                        new
-                        {
-                            GenreId = 5,
-                            DvdId = 29
-                        },
-                        new
-                        {
-                            GenreId = 5,
-                            DvdId = 34
-                        },
-                        new
-                        {
-                            GenreId = 6,
-                            DvdId = 10
-                        },
-                        new
-                        {
-                            GenreId = 6,
-                            DvdId = 26
-                        },
-                        new
-                        {
-                            GenreId = 7,
-                            DvdId = 5
-                        },
-                        new
-                        {
-                            GenreId = 8,
-                            DvdId = 2
-                        },
-                        new
-                        {
-                            GenreId = 9,
-                            DvdId = 3
-                        },
-                        new
-                        {
-                            GenreId = 9,
-                            DvdId = 16
-                        },
-                        new
-                        {
-                            GenreId = 9,
-                            DvdId = 17
-                        },
-                        new
-                        {
-                            GenreId = 9,
-                            DvdId = 19
-                        },
-                        new
-                        {
-                            GenreId = 9,
-                            DvdId = 20
-                        },
-                        new
-                        {
-                            GenreId = 9,
-                            DvdId = 21
-                        },
-                        new
-                        {
-                            GenreId = 9,
-                            DvdId = 22
-                        },
-                        new
-                        {
-                            GenreId = 9,
-                            DvdId = 23
-                        },
-                        new
-                        {
-                            GenreId = 9,
-                            DvdId = 24
-                        },
-                        new
-                        {
-                            GenreId = 9,
-                            DvdId = 30
-                        },
-                        new
-                        {
-                            GenreId = 9,
-                            DvdId = 31
-                        },
-                        new
-                        {
-                            GenreId = 10,
-                            DvdId = 13
-                        },
-                        new
-                        {
-                            GenreId = 10,
-                            DvdId = 35
-                        });
-                });
-
-            modelBuilder.Entity("VideoRental.Models.ActorDvd", b =>
+            modelBuilder.Entity("VideoRental.Models.DVD", b =>
                 {
                     b.HasOne("VideoRental.Models.Actor", "Actor")
-                        .WithMany("ActorDvds")
+                        .WithMany("DVDs")
                         .HasForeignKey("ActorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("VideoRental.Models.DVD", "DVD")
-                        .WithMany("ActorDvds")
-                        .HasForeignKey("DvdId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("VideoRental.Models.DVD", b =>
-                {
                     b.HasOne("VideoRental.Models.Country", "Country")
                         .WithMany("DVDs")
                         .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("VideoRental.Models.GenreDvd", b =>
-                {
-                    b.HasOne("VideoRental.Models.DVD", "DVD")
-                        .WithMany("GenreDvds")
-                        .HasForeignKey("DvdId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.HasOne("VideoRental.Models.Genre", "Genre")
-                        .WithMany("GenreDvds")
-                        .HasForeignKey("GenreId")
+                        .WithMany("DVDs")
+                        .HasForeignKey("GenreKey")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

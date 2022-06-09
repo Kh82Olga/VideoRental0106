@@ -23,10 +23,11 @@ namespace VideoRental.Controllers
 
         public IActionResult Index()
         {
+
             var result = _context.DVDs
             .Include(e => e.Country)
-            .Include(e => e.ActorDvds)
-            .Include(e => e.GenreDvds);
+            .Include(e => e.Actor)
+            .Include(e => e.Genre);
 
             return View(result);
         }

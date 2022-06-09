@@ -29,7 +29,10 @@ namespace VideoRental
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
             services.AddTransient<ActorRepo, ActorRepo>();
             services.AddTransient<DvdRepo, DvdRepo>();
-            services.AddTransient<ActorDvdRepo, ActorDvdRepo>();
+            services.AddTransient<CountryRepo, CountryRepo>();
+            services.AddTransient<CustomerRepo, CustomerRepo>();
+            services.AddTransient<GenreRepo, GenreRepo>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +56,7 @@ namespace VideoRental
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Actor}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

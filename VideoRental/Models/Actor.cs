@@ -7,6 +7,6 @@ namespace VideoRental.Models
         public int ActorId { get; set; }
         public string ActorName { get; set; }
         public string Gender { get; set; }
-        public virtual ICollection<ActorDvd> ActorDvds { get; set; }
+        public virtual ICollection<DVD> DVDs { get; set; }
     }
 }
