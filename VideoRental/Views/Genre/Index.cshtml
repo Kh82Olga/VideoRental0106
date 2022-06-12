@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Genres</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -37,8 +37,8 @@
                 @Html.DisplayFor(modelItem => item.AgeLimit)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.GenreKey">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.GenreKey">Details</a> |
+                <a asp-action="Update" asp-route-id="@item.GenreKey">Update</a> |
+                <a asp-action="Insert" asp-route-id="@item.GenreKey">Insert</a> |
                 <a asp-action="Delete" asp-route-id="@item.GenreKey">Delete</a>
             </td>
         </tr>

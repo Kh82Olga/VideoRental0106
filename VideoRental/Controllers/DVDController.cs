@@ -14,7 +14,9 @@ namespace VideoRental.Controllers
         }
         public IActionResult Index()
         {
+
             var dvds = _dvdRepo.GetAll();
+            
             return View(dvds);
         }
         [HttpGet]

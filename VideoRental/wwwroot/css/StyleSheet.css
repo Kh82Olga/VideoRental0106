@@ -1,0 +1,30 @@
+﻿
+
+body {
+    background-color: lightblue;
+    background-image: url(/Images/pngwing.com.png);
+    font-weight:bold;
+    font-size: larger;
+}
+img{
+    
+    padding-left: 150px;   
+}
+table {
+    
+}
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+    color: blue;
+    text-shadow: none;
+}
+.bg-lightblue {
+    background-color: lightblue;
+}
+.fw-bold{
+    font-weight: bolder;
+}
+
+
+

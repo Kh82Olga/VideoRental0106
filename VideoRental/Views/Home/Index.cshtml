@@ -1,55 +1,9 @@
-﻿@model IEnumerable<VideoRental.Models.DVD>
-
+﻿
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<a href="http://localhost:30042/DVD" class="btn btn-lg btn-secondary fw-bold border-blue bg-lightblue">Movie Rentals</a>
+<img src="/Images/pngwinglogo.png" />
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.MovieName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReleaseYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Available)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Country)
-            </th>
-            
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MovieName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseYear)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Available)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country.CountryName)
-            </td>
-           
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.DvdId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DvdId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DvdId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
