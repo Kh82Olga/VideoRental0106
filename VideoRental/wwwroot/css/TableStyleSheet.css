@@ -1,0 +1,12 @@
+﻿
+table {
+    background:rgb(255, 255, 255,0.5);
+    
+}
+th {
+    background-color: Highlight ;
+    text-align:center;
+}
+tr:hover {
+    background-color: skyblue;
+}

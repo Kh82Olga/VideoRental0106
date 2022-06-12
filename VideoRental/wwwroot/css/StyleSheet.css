@@ -1,5 +1,4 @@
 ﻿
-
 body {
     background-color: lightblue;
     background-image: url(/Images/pngwing.com.png);
@@ -9,9 +8,6 @@ body {
 img{
     
     padding-left: 150px;   
-}
-table {
-    
 }
 .btn-secondary,
 .btn-secondary:hover,
@@ -25,6 +21,7 @@ table {
 .fw-bold{
     font-weight: bolder;
 }
+
 
 
 
